@@ -7,11 +7,12 @@ const ingredients = [
   "Condiments",
 ];
 
-const ul = document.querySelector("ul");
-console.log(ul);
+const ul = document.querySelector("#ingredients");
+const elements = [];
 for (const ingredient of ingredients) {
   const li = document.createElement("li");
   li.innerText = ingredient;
-
-  ul.appendChild(li);
+  elements.push(li.outerHTML);
 }
+ul.insertAdjacentHTML("beforeend", elements.join("\n"));
+console.log(ul);
